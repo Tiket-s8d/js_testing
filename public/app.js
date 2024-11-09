@@ -1,4 +1,3 @@
-// /public/app.js
 fetch('/data')
     .then(response => response.json())
     .then(chartData => {
@@ -12,15 +11,15 @@ fetch('/data')
                     data: chartData.data,
                     borderColor: 'rgb(75, 192, 192)',
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    fill: true,
+                    fill: false,
                     tension: 0.1,
                     pointRadius: 5,
-                    pointHoverRadius: 8
+                    pointHoverRadius: 3
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
                 plugins: {
                     title: {
                         display: true,
@@ -42,7 +41,7 @@ fetch('/data')
                         title: {
                             display: true,
                             text: 'Дата'
-                        }
+                        },
                     },
                     y: {
                         title: {
